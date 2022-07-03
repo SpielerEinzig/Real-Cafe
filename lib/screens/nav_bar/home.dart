@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:real_cafe/screens/nav_bar/order_details.dart';
 import 'package:real_cafe/utilities/constants.dart';
 import 'package:real_cafe/widgets/search_bar_home.dart';
 
@@ -87,11 +88,22 @@ class _HomeState extends State<Home> {
                         childAspectRatio: (135 / 235),
                         children:
                             drinkCategories[currentSelected].items.map((item) {
-                          return coffeeGridItem(
-                            rating: item.rating,
-                            imgUrl: item.imgUrl,
-                            name: item.name,
-                            price: item.price,
+                          return GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      OrderDetails(coffeeOrder: item),
+                                ),
+                              );
+                            },
+                            child: coffeeGridItem(
+                              rating: item.rating,
+                              imgUrl: item.imgUrl,
+                              name: item.name,
+                              price: item.price,
+                            ),
                           );
                         }).toList(),
                       ),

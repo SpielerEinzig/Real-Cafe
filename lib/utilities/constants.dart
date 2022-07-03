@@ -12,6 +12,14 @@ const kCoffeeGrid = Color(0xff463D46);
 const kCoffeeOrderRating = Color(0xff414141);
 const kCoffeeRatingStarOrder = Color(0xffD3A601);
 
+List<String> choiceOfMilk = [
+  "Oat milk",
+  "Soy milk",
+  "Cow's milk",
+  "Goat's milk",
+  "Almond milk",
+];
+
 List<DrinkCategory> drinkCategories = [
   DrinkCategory(name: "Hot Coffee", items: coffeeOrderItems),
   DrinkCategory(name: "Chocolate", items: chocolateOrders),
@@ -22,13 +30,13 @@ List<DrinkCategory> drinkCategories = [
 List<CoffeeOrder> icedCoffeeOrders = [
   CoffeeOrder(
       name: "Heavy Cream Iced Coffee",
-      addition: "Drizzled with Heavy Cream",
+      addition: "With Heavy Cream",
       imgUrl: "assets/images/coffeeShake/coffee-shake1.jpeg",
       price: 99,
       rating: 4.5,
-      description: "A single espresso shot poured into hot foamy milk, \n"
-          "with the surface topped with mildly sweetened \n"
-          "cocoa powder and drizzled with scrumptious \n"
+      description: "A single espresso shot poured into hot foamy milk, "
+          "with the surface topped with mildly sweetened "
+          "cocoa powder and drizzled with scrumptious "
           "caramel syrup."),
   CoffeeOrder(
       name: "Creamed Iced Coffee",
@@ -36,22 +44,22 @@ List<CoffeeOrder> icedCoffeeOrders = [
       imgUrl: "assets/images/coffeeShake/coffee-shake2.jpeg",
       price: 99,
       rating: 4.5,
-      description: "A single espresso shot poured into hot foamy milk, \n"
-          "with the surface topped with mildly sweetened \n"
-          "cocoa powder and drizzled with scrumptious \n"
+      description: "A single espresso shot poured into hot foamy milk, "
+          "with the surface topped with mildly sweetened "
+          "cocoa powder and drizzled with scrumptious "
           "caramel syrup."),
 ];
 
 List<CoffeeOrder> coffeeShakeOrders = [
   CoffeeOrder(
       name: "Parfait",
-      addition: "Drizzled with Whipped Chocolate",
+      addition: "Drizzled with Chocolate",
       imgUrl: "assets/images/coffeeShake/coffee-shake1.jpeg",
       price: 99,
       rating: 4.5,
-      description: "A single espresso shot poured into hot foamy milk, \n"
-          "with the surface topped with mildly sweetened \n"
-          "cocoa powder and drizzled with scrumptious \n"
+      description: "A single espresso shot poured into hot foamy milk, "
+          "with the surface topped with mildly sweetened "
+          "cocoa powder and drizzled with scrumptious "
           "caramel syrup."),
   CoffeeOrder(
       name: "Whipped cream coffee shake",
@@ -59,9 +67,9 @@ List<CoffeeOrder> coffeeShakeOrders = [
       imgUrl: "assets/images/coffeeShake/coffee-shake2.jpeg",
       price: 99,
       rating: 4.5,
-      description: "A single espresso shot poured into hot foamy milk, \n"
-          "with the surface topped with mildly sweetened \n"
-          "cocoa powder and drizzled with scrumptious \n"
+      description: "A single espresso shot poured into hot foamy milk, "
+          "with the surface topped with mildly sweetened "
+          "cocoa powder and drizzled with scrumptious "
           "caramel syrup."),
   CoffeeOrder(
       name: "Frosted Coffee Shake",
@@ -69,22 +77,22 @@ List<CoffeeOrder> coffeeShakeOrders = [
       imgUrl: "assets/images/coffeeShake/coffee-shake3.jpeg",
       price: 99,
       rating: 4.5,
-      description: "A single espresso shot poured into hot foamy milk, \n"
-          "with the surface topped with mildly sweetened \n"
-          "cocoa powder and drizzled with scrumptious \n"
+      description: "A single espresso shot poured into hot foamy milk, "
+          "with the surface topped with mildly sweetened "
+          "cocoa powder and drizzled with scrumptious "
           "caramel syrup."),
 ];
 
 List<CoffeeOrder> chocolateOrders = [
   CoffeeOrder(
       name: "Whipped Cream Chocolate",
-      addition: "Drizzled with Whipped Cream",
+      addition: "Drizzled with Cream",
       imgUrl: "assets/images/chocolate/chocolate1.jpeg",
       price: 99,
       rating: 4.5,
-      description: "A single espresso shot poured into hot foamy milk, \n"
-          "with the surface topped with mildly sweetened \n"
-          "cocoa powder and drizzled with scrumptious \n"
+      description: "A single espresso shot poured into hot foamy milk, "
+          "with the surface topped with mildly sweetened "
+          "cocoa powder and drizzled with scrumptious "
           "caramel syrup."),
   CoffeeOrder(
       name: "Marshmallow Chocolate Drink",
@@ -92,9 +100,9 @@ List<CoffeeOrder> chocolateOrders = [
       imgUrl: "assets/images/chocolate/chocolate2.jpeg",
       price: 99,
       rating: 4.5,
-      description: "A single espresso shot poured into hot foamy milk, \n"
-          "with the surface topped with mildly sweetened \n"
-          "cocoa powder and drizzled with scrumptious \n"
+      description: "A single espresso shot poured into hot foamy milk, "
+          "with the surface topped with mildly sweetened "
+          "cocoa powder and drizzled with scrumptious "
           "caramel syrup."),
 ];
 
@@ -105,9 +113,9 @@ List<CoffeeOrder> coffeeOrderItems = [
       imgUrl: "assets/images/coffee/coffee1.png",
       price: 99,
       rating: 4.5,
-      description: "A single espresso shot poured into hot foamy milk, \n"
-          "with the surface topped with mildly sweetened \n"
-          "cocoa powder and drizzled with scrumptious \n"
+      description: "A single espresso shot poured into hot foamy milk, "
+          "with the surface topped with mildly sweetened "
+          "cocoa powder and drizzled with scrumptious "
           "caramel syrup."),
   CoffeeOrder(
       name: "Espresso",
@@ -115,9 +123,9 @@ List<CoffeeOrder> coffeeOrderItems = [
       imgUrl: "assets/images/coffee/coffee2.png",
       price: 199,
       rating: 4.0,
-      description: "A single espresso shot poured into hot foamy milk, \n"
-          "with the surface topped with mildly sweetened \n"
-          "cocoa powder and drizzled with scrumptious \n"
+      description: "A single espresso shot poured into hot foamy milk, "
+          "with the surface topped with mildly sweetened "
+          "cocoa powder and drizzled with scrumptious "
           "caramel syrup."),
   CoffeeOrder(
       name: "Bursting Blueberry",
@@ -125,9 +133,9 @@ List<CoffeeOrder> coffeeOrderItems = [
       imgUrl: "assets/images/coffee/coffee3.png",
       price: 249,
       rating: 4.8,
-      description: "A single espresso shot poured into hot foamy milk, \n"
-          "with the surface topped with mildly sweetened \n"
-          "cocoa powder and drizzled with scrumptious \n"
+      description: "A single espresso shot poured into hot foamy milk, "
+          "with the surface topped with mildly sweetened "
+          "cocoa powder and drizzled with scrumptious "
           "caramel syrup."),
   CoffeeOrder(
       name: "Cappuccino",
@@ -135,8 +143,8 @@ List<CoffeeOrder> coffeeOrderItems = [
       imgUrl: "assets/images/coffee/coffee4.png",
       price: 24,
       rating: 4.0,
-      description: "A single espresso shot poured into hot foamy milk, \n"
-          "with the surface topped with mildly sweetened \n"
-          "cocoa powder and drizzled with scrumptious \n"
+      description: "A single espresso shot poured into hot foamy milk, "
+          "with the surface topped with mildly sweetened "
+          "cocoa powder and drizzled with scrumptious "
           "caramel syrup."),
 ];
