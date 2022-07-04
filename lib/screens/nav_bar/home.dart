@@ -57,23 +57,50 @@ class _HomeState extends State<Home> {
                         itemCount: drinkCategories.length,
                         itemBuilder: (context, index) {
                           return TextButton(
-                              onPressed: () {
-                                currentSelected = index;
-                                setState(() {});
-                              },
-                              child: Padding(
-                                padding: const EdgeInsets.only(bottom: 40.0),
-                                child: RotatedBox(
-                                  quarterTurns: 3,
-                                  child: Text(
-                                    drinkCategories[index].name,
-                                    style: TextStyle(
-                                      fontSize: 17,
-                                      color: kPrimary.withOpacity(0.5),
+                            onPressed: () {
+                              currentSelected = index;
+                              setState(() {});
+                            },
+                            child: index == currentSelected
+                                ? Padding(
+                                    padding:
+                                        const EdgeInsets.only(bottom: 40.0),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                          color: kPrimary,
+                                          borderRadius:
+                                              BorderRadius.circular(7)),
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 8.0),
+                                        child: RotatedBox(
+                                          quarterTurns: 3,
+                                          child: Text(
+                                            drinkCategories[index].name,
+                                            style: const TextStyle(
+                                              fontSize: 17,
+                                              color: kCardColor,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                : Padding(
+                                    padding:
+                                        const EdgeInsets.only(bottom: 40.0),
+                                    child: RotatedBox(
+                                      quarterTurns: 3,
+                                      child: Text(
+                                        drinkCategories[index].name,
+                                        style: TextStyle(
+                                          fontSize: 17,
+                                          color: kPrimary.withOpacity(0.5),
+                                        ),
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ));
+                          );
                         },
                       ),
                     ),

@@ -13,4 +13,14 @@ class CoffeeOrder {
       required this.imgUrl,
       required this.price,
       required this.rating});
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is CoffeeOrder &&
+          runtimeType == other.runtimeType &&
+          name == other.name;
+
+  @override
+  int get hashCode => name.hashCode;
 }

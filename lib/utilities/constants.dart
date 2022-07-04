@@ -29,9 +29,9 @@ List<DrinkCategory> drinkCategories = [
 
 List<CoffeeOrder> icedCoffeeOrders = [
   CoffeeOrder(
-      name: "Heavy Cream Iced Coffee",
+      name: "Cream Iced Coffee",
       addition: "With Heavy Cream",
-      imgUrl: "assets/images/coffeeShake/coffee-shake1.jpeg",
+      imgUrl: "assets/images/icedCoffee/iced-coffee1.jpeg",
       price: 99,
       rating: 4.5,
       description: "A single espresso shot poured into hot foamy milk, "
@@ -41,7 +41,7 @@ List<CoffeeOrder> icedCoffeeOrders = [
   CoffeeOrder(
       name: "Creamed Iced Coffee",
       addition: "Drizzled with Cream",
-      imgUrl: "assets/images/coffeeShake/coffee-shake2.jpeg",
+      imgUrl: "assets/images/icedCoffee/iced-coffee2.jpeg",
       price: 99,
       rating: 4.5,
       description: "A single espresso shot poured into hot foamy milk, "
@@ -62,7 +62,7 @@ List<CoffeeOrder> coffeeShakeOrders = [
           "cocoa powder and drizzled with scrumptious "
           "caramel syrup."),
   CoffeeOrder(
-      name: "Whipped cream coffee shake",
+      name: "coffee shake",
       addition: "Topped with whipped cream",
       imgUrl: "assets/images/coffeeShake/coffee-shake2.jpeg",
       price: 99,

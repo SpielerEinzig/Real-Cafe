@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'package:real_cafe/screens/home_page.dart';
 import 'package:real_cafe/utilities/constants.dart';
 
-void main() => runApp(const MyApp());
+import 'provider/favourites_provider.dart';
+
+void main() => runApp(
+      MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (_) => FavouritesProvider()),
+        ],
+        child: const MyApp(),
+      ),
+    );
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
