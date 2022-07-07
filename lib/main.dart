@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:real_cafe/provider/cart_provider.dart';
 import 'package:real_cafe/screens/home_page.dart';
 import 'package:real_cafe/utilities/constants.dart';
 
@@ -10,6 +11,7 @@ void main() => runApp(
       MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (_) => FavouritesProvider()),
+          ChangeNotifierProvider(create: (_) => CartItemProvider()),
         ],
         child: const MyApp(),
       ),

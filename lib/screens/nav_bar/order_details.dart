@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:real_cafe/models/coffee_order.dart';
+import 'package:real_cafe/provider/cart_provider.dart';
+import 'package:real_cafe/widgets/custom_button.dart';
+import 'package:real_cafe/widgets/show_snack_bar.dart';
 
 import '../../provider/favourites_provider.dart';
 import '../../utilities/constants.dart';
@@ -215,7 +218,7 @@ class _OrderDetailsState extends State<OrderDetails> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -232,30 +235,16 @@ class _OrderDetailsState extends State<OrderDetails> {
                             ),
                           ],
                         ),
-                        GestureDetector(
-                          onTap: () {
-                            print("Buy now");
-                          },
-                          child: Container(
-                            width: screenWidth * 0.6,
-                            height: 45,
-                            decoration: BoxDecoration(
-                              color: kPrimary,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: const Center(
-                              child: Text(
-                                "Buy Now",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  letterSpacing: 1.2,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
+                        customButton(
+                            screenWidth: screenWidth * 0.7,
+                            text: "Buy Now",
+                            onTap: () {
+                              context
+                                  .read<CartItemProvider>()
+                                  .addItemToCart(item: widget.coffeeOrder);
+                              showSnackBar(
+                                  text: "Added to Cart", context: context);
+                            }),
                       ],
                     ),
                   ],

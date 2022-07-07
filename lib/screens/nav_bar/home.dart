@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:real_cafe/screens/nav_bar/cart.dart';
 import 'package:real_cafe/screens/nav_bar/order_details.dart';
 import 'package:real_cafe/utilities/constants.dart';
 import 'package:real_cafe/widgets/search_bar_home.dart';
@@ -28,7 +29,12 @@ class _HomeState extends State<Home> {
               padding: const EdgeInsets.only(left: 16, right: 16, top: 10),
               child: Column(
                 children: [
-                  logoShoppingCartRow(cartPressed: () {}),
+                  logoShoppingCartRow(cartPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const Cart();
+                    }));
+                  }),
                   const SizedBox(height: 13),
                   searchBarHome(
                       screenWidth: screenWidth,
