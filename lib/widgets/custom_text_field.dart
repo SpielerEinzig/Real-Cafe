@@ -6,6 +6,7 @@ Widget customTextField({
   required String hintText,
   required TextEditingController controller,
   required String label,
+  required bool isPassword,
 }) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,6 +22,10 @@ Widget customTextField({
       const SizedBox(height: 10),
       TextField(
         controller: controller,
+        keyboardType: isPassword
+            ? TextInputType.visiblePassword
+            : TextInputType.emailAddress,
+        obscureText: isPassword,
         style: TextStyle(color: kPrimary.withOpacity(0.8)),
         decoration: InputDecoration(
           hintText: hintText,

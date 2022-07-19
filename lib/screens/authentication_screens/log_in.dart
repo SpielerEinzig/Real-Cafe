@@ -5,6 +5,8 @@ import 'package:real_cafe/utilities/no_animated_page_transition.dart';
 import 'package:real_cafe/widgets/custom_button.dart';
 import 'package:real_cafe/widgets/custom_text_field.dart';
 
+import '../../services/auth_service.dart';
+
 class LogIn extends StatefulWidget {
   const LogIn({Key? key}) : super(key: key);
 
@@ -15,6 +17,7 @@ class LogIn extends StatefulWidget {
 class _LogInState extends State<LogIn> {
   final TextEditingController _emailEditingController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final AuthService _authService = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -41,11 +44,13 @@ class _LogInState extends State<LogIn> {
                   ),
                   const SizedBox(height: 40),
                   customTextField(
+                      isPassword: false,
                       hintText: "Enter your email",
                       controller: _emailEditingController,
                       label: "Email"),
                   const SizedBox(height: 30),
                   customTextField(
+                      isPassword: true,
                       hintText: "Enter your password",
                       controller: _passwordController,
                       label: "Password"),
@@ -68,9 +73,11 @@ class _LogInState extends State<LogIn> {
               customButton(
                   screenWidth: size.width,
                   text: "Log In",
-                  onTap: () {
-                    print(_emailEditingController.text);
-                    print(_passwordController.text);
+                  onTap: () async {
+                    await _authService.loginUserWithEmailAndPassword(
+                        context: context,
+                        email: _emailEditingController.text,
+                        password: _passwordController.text);
                   })
             ],
           ),

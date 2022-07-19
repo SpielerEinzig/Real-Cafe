@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "320682743861",
+    "project_id": "real-cafe-d3fa4",
+    "storage_bucket": "real-cafe-d3fa4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320682743861:android:d94734cc6444c7d21d397c",
+        "android_client_info": {
+          "package_name": "com.SpielerEinzig.real_cafe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "320682743861-b7rm5sqccuojsjmdeqsjmp4ebb0igl1s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0E9FVMwQFCnhqw3I_ERj2NpNLJ77A6Ao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "320682743861-b7rm5sqccuojsjmdeqsjmp4ebb0igl1s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "320682743861-fnn40imc06c9bta3kktvtodf7tlg677h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.SpielerEinzig.realCafe"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

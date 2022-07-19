@@ -107,9 +107,7 @@ class _CartState extends State<Cart> {
                     customButton(
                         screenWidth: double.infinity,
                         text: "Pay Now",
-                        onTap: () {
-                          print("tapped");
-                        })
+                        onTap: () {})
                   ],
                 ),
               ),
