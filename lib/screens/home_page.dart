@@ -28,6 +28,12 @@ class _HomePageState extends State<HomePage> {
   ];
 
   @override
+  void initState() {
+    super.initState();
+    Navigator.of(context).popUntil((route) => route.isCurrent);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
