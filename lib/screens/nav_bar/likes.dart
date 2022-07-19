@@ -39,7 +39,6 @@ class _LikesState extends State<Likes> {
                     shortDescription: item.addition,
                     price: item.price,
                     favouriteButtonPressed: () {
-                      print("pressed");
                       setState(() {
                         context
                             .read<FavouritesProvider>()

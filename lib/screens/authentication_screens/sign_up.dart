@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:real_cafe/screens/authentication_screens/log_in.dart';
+import 'package:real_cafe/services/auth_service.dart';
 
 import '../../utilities/constants.dart';
 import '../../utilities/no_animated_page_transition.dart';
@@ -17,6 +18,7 @@ class _SignUpState extends State<SignUp> {
   final TextEditingController _emailEditingController = TextEditingController();
   final TextEditingController _nameEdititngController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final AuthService _authService = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -43,16 +45,19 @@ class _SignUpState extends State<SignUp> {
                   ),
                   const SizedBox(height: 10),
                   customTextField(
+                      isPassword: false,
                       hintText: "Enter your name",
                       controller: _nameEdititngController,
                       label: "Name"),
                   const SizedBox(height: 30),
                   customTextField(
+                      isPassword: false,
                       hintText: "Enter your email",
                       controller: _emailEditingController,
                       label: "Email"),
                   const SizedBox(height: 30),
                   customTextField(
+                      isPassword: true,
                       hintText: "Enter your password",
                       controller: _passwordController,
                       label: "Password"),
@@ -75,10 +80,12 @@ class _SignUpState extends State<SignUp> {
               customButton(
                   screenWidth: size.width,
                   text: "Sign Up",
-                  onTap: () {
-                    print(_nameEdititngController.text);
-                    print(_emailEditingController.text);
-                    print(_passwordController.text);
+                  onTap: () async {
+                    await _authService.createUserWithEmailAndPassword(
+                        email: _emailEditingController.text,
+                        password: _passwordController.text,
+                        context: context,
+                        name: _nameEdititngController.text);
                   })
             ],
           ),

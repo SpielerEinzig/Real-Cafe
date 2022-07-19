@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get_storage/get_storage.dart';
@@ -6,9 +7,14 @@ import 'package:real_cafe/provider/cart_provider.dart';
 import 'package:real_cafe/screens/splash_screen.dart';
 import 'package:real_cafe/utilities/constants.dart';
 
+import 'firebase_options.dart';
 import 'provider/favourites_provider.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await GetStorage.init();
   runApp(
     MultiProvider(
