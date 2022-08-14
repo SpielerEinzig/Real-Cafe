@@ -41,11 +41,11 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     animateLogo();
+    navigate();
   }
 
   @override
   Widget build(BuildContext context) {
-    navigate();
     return Scaffold(
       body: Center(
         child: AnimatedSwitcher(

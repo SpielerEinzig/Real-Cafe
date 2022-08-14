@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:provider/provider.dart';
+import 'package:real_cafe/provider/address_provider.dart';
 import 'package:real_cafe/provider/cart_provider.dart';
 import 'package:real_cafe/screens/splash_screen.dart';
 import 'package:real_cafe/utilities/constants.dart';
@@ -21,6 +22,7 @@ void main() async {
       providers: [
         ChangeNotifierProvider(create: (_) => FavouritesProvider()),
         ChangeNotifierProvider(create: (_) => CartItemProvider()),
+        ChangeNotifierProvider(create: (_) => AddressProvider()),
       ],
       child: const MyApp(),
     ),
