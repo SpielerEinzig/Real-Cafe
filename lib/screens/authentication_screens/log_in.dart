@@ -26,60 +26,62 @@ class _LogInState extends State<LogIn> {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(30.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Container(
-                    height: 102,
-                    width: 131,
-                    decoration: const BoxDecoration(
-                      //color: Colors.red,
-                      image: DecorationImage(
-                          image: AssetImage("assets/images/brand-logo.png"),
-                          fit: BoxFit.fitWidth),
-                    ),
-                  ),
-                  const SizedBox(height: 40),
-                  customTextField(
-                      isPassword: false,
-                      hintText: "Enter your email",
-                      controller: _emailEditingController,
-                      label: "Email"),
-                  const SizedBox(height: 30),
-                  customTextField(
-                      isPassword: true,
-                      hintText: "Enter your password",
-                      controller: _passwordController,
-                      label: "Password"),
-                  const SizedBox(height: 15),
-                  TextButton(
-                    onPressed: () {
-                      noAnimatedPushReplacement(
-                          context: context, destinationPage: const SignUp());
-                    },
-                    child: const Text(
-                      "Create Account",
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: kPrimary,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Container(
+                      height: 102,
+                      width: 131,
+                      decoration: const BoxDecoration(
+                        //color: Colors.red,
+                        image: DecorationImage(
+                            image: AssetImage("assets/images/brand-logo.png"),
+                            fit: BoxFit.fitWidth),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              customButton(
-                  screenWidth: size.width,
-                  text: "Log In",
-                  onTap: () async {
-                    await _authService.loginUserWithEmailAndPassword(
-                        context: context,
-                        email: _emailEditingController.text,
-                        password: _passwordController.text);
-                  })
-            ],
+                    const SizedBox(height: 40),
+                    customTextField(
+                        isPassword: false,
+                        hintText: "Enter your email",
+                        controller: _emailEditingController,
+                        label: "Email"),
+                    const SizedBox(height: 30),
+                    customTextField(
+                        isPassword: true,
+                        hintText: "Enter your password",
+                        controller: _passwordController,
+                        label: "Password"),
+                    const SizedBox(height: 15),
+                    TextButton(
+                      onPressed: () {
+                        noAnimatedPushReplacement(
+                            context: context, destinationPage: const SignUp());
+                      },
+                      child: const Text(
+                        "Create Account",
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: kPrimary,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                customButton(
+                    screenWidth: size.width,
+                    text: "Log In",
+                    onTap: () async {
+                      await _authService.loginUserWithEmailAndPassword(
+                          context: context,
+                          email: _emailEditingController.text,
+                          password: _passwordController.text);
+                    })
+              ],
+            ),
           ),
         ),
       ),

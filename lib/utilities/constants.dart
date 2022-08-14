@@ -11,6 +11,9 @@ const kHintTextColor = Color(0xff92877F);
 const kCoffeeGrid = Color(0xff463D46);
 const kCoffeeOrderRating = Color(0xff414141);
 const kCoffeeRatingStarOrder = Color(0xffD3A601);
+const kAddressIconColor = Color(0xffACA7AC);
+const kAddressSubText = Color(0xff888888);
+const kTextFieldColor = Color(0xff5A505A);
 
 List<String> choiceOfMilk = [
   "Oat milk",

@@ -17,6 +17,7 @@ class _LikesState extends State<Likes> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           elevation: 0,
           title: const Text(
             "Favourites",
