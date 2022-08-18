@@ -6,14 +6,14 @@ import 'package:real_cafe/screens/nav_bar/profile.dart';
 
 import '../widgets/bottom_navigation_bar.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class NavHome extends StatefulWidget {
+  const NavHome({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<NavHome> createState() => _NavHomeState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _NavHomeState extends State<NavHome> {
   int currentSelected = 0;
 
   final _pageController = PageController(
@@ -36,6 +36,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: PageView(
         controller: _pageController,
         children: navbarPages,
