@@ -26,4 +26,23 @@ class DatabaseUserService {
       showSnackBar(context: context, text: e.message!);
     }
   }
+
+  editUserDoc({
+    required String name,
+    required String uid,
+    required String email,
+    required context,
+  }) async {
+    try {
+      await _fireStore.collection("Users").doc(uid).update({
+        "name": name,
+        "userId": uid,
+        "email": email,
+      });
+
+      showSnackBar(context: context, text: "Edited details successfully");
+    } on FirebaseException catch (e) {
+      showSnackBar(context: context, text: e.message!);
+    }
+  }
 }

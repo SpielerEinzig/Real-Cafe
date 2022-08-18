@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:real_cafe/services/database_service.dart';
 import 'package:real_cafe/utilities/constants.dart';
 import 'package:real_cafe/widgets/custom_button.dart';
 import 'package:real_cafe/widgets/custom_text_field.dart';
@@ -21,15 +22,16 @@ class _ProfileState extends State<Profile> {
   final _emailController = TextEditingController();
   final _fireStore = FirebaseFirestore.instance;
   Map<String, dynamic>? userDetails;
+  User? user;
 
   getUserDetails() async {
-    User? user = AuthService().getUserAuthCredential;
+    user = AuthService().getUserAuthCredential;
     userDetails = context.read<UserDetailsProvider>().getFirestoreUserDetails;
 
     if (userDetails == null) {
       if (user != null) {
         final userRef =
-            await _fireStore.collection("Users").doc(user.uid).get();
+            await _fireStore.collection("Users").doc(user!.uid).get();
         final userData = userRef.data();
         userDetails = userData;
         context
@@ -133,7 +135,13 @@ class _ProfileState extends State<Profile> {
                               customButton(
                                   screenWidth: size.width,
                                   text: "Save",
-                                  onTap: () {}),
+                                  onTap: () async {
+                                    await DatabaseUserService().editUserDoc(
+                                        name: _nameController.text,
+                                        uid: user!.uid,
+                                        email: _emailController.text,
+                                        context: context);
+                                  }),
                             ],
                           ),
                         ),
