@@ -10,6 +10,7 @@ import 'package:real_cafe/utilities/constants.dart';
 
 import 'firebase_options.dart';
 import 'provider/favourites_provider.dart';
+import 'provider/user_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,6 +24,7 @@ void main() async {
         ChangeNotifierProvider(create: (_) => FavouritesProvider()),
         ChangeNotifierProvider(create: (_) => CartItemProvider()),
         ChangeNotifierProvider(create: (_) => AddressProvider()),
+        ChangeNotifierProvider(create: (_) => UserDetailsProvider()),
       ],
       child: const MyApp(),
     ),

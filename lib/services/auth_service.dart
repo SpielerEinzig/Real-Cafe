@@ -1,9 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:real_cafe/services/database_service.dart';
 
-import '../screens/home_page.dart';
+import '../screens/nav_home.dart';
 import '../utilities/no_animated_page_transition.dart';
 import '../widgets/show_snack_bar.dart';
+
+User? _user;
 
 class AuthService {
   final _firebaseAuth = FirebaseAuth.instance;
@@ -50,10 +52,14 @@ class AuthService {
       UserCredential user = await _firebaseAuth.signInWithEmailAndPassword(
           email: email, password: password);
 
+      _user = user.user;
+
       noAnimatedPushReplacement(
-          context: context, destinationPage: const HomePage());
+          context: context, destinationPage: const NavHome());
     } on FirebaseException catch (e) {
       showSnackBar(text: e.message!, context: context);
     }
   }
+
+  User? get getUserAuthCredential => _user;
 }

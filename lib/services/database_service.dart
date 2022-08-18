@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:real_cafe/screens/home_page.dart';
+import 'package:real_cafe/screens/nav_home.dart';
 import 'package:real_cafe/utilities/no_animated_page_transition.dart';
 
 import '../widgets/show_snack_bar.dart';
@@ -21,7 +21,7 @@ class DatabaseUserService {
       });
 
       noAnimatedPushReplacement(
-          context: context, destinationPage: const HomePage());
+          context: context, destinationPage: const NavHome());
     } on FirebaseException catch (e) {
       showSnackBar(context: context, text: e.message!);
     }

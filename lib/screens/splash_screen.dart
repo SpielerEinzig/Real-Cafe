@@ -5,7 +5,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:real_cafe/screens/authentication_screens/log_in.dart';
 import 'package:real_cafe/utilities/no_animated_page_transition.dart';
 
-import 'home_page.dart';
+import 'nav_home.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(const Duration(seconds: 5), () {
       noAnimatedTransition(
         context: context,
-        destinationPage: userId != null ? const HomePage() : const LogIn(),
+        destinationPage: userId != null ? const NavHome() : const LogIn(),
       );
     });
   }
