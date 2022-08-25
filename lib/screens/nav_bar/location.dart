@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:real_cafe/models/address_details.dart';
@@ -6,7 +7,9 @@ import 'package:real_cafe/widgets/add_address_text_field.dart';
 import 'package:real_cafe/widgets/address_type_widget.dart';
 import 'package:real_cafe/widgets/minor_button.dart';
 import 'package:real_cafe/widgets/saved_address_card.dart';
+import 'package:real_cafe/widgets/show_snack_bar.dart';
 
+import '../../services/auth_service.dart';
 import '../../utilities/constants.dart';
 
 class Location extends StatefulWidget {
@@ -22,6 +25,7 @@ class _LocationState extends State<Location> {
   final TextEditingController _stateController = TextEditingController();
   final TextEditingController _pinCodeController = TextEditingController();
   final TextEditingController _houseNumberController = TextEditingController();
+  User? user = AuthService().getUserAuthCredential;
   int selectedAddress = 0;
   bool addressTypeHome = true;
 
@@ -144,7 +148,27 @@ class _LocationState extends State<Location> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           MinorButton(
-                            onTap: () {},
+                            onTap: () {
+                              if (user != null) {
+                                AddressModel item = AddressModel(
+                                    name: _nameController.text,
+                                    userId: user!.uid,
+                                    houseNumber: _houseNumberController.text,
+                                    isHome: addressTypeHome,
+                                    phoneNumber:
+                                        int.parse(_phoneNumberController.text),
+                                    state: _stateController.text,
+                                    zipCode: int.parse(_pinCodeController.text),
+                                    id: "");
+
+                                context
+                                    .read<AddressProvider>()
+                                    .addItem(item: item, context: context);
+                              } else {
+                                showSnackBar(
+                                    text: "Error occurred", context: context);
+                              }
+                            },
                             text: "Save",
                             color: kPrimary,
                             textColor: kBackgroundColor,

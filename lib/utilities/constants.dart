@@ -32,6 +32,7 @@ List<DrinkCategory> drinkCategories = [
 
 List<CoffeeOrder> icedCoffeeOrders = [
   CoffeeOrder(
+      id: "",
       name: "Cream Iced Coffee",
       addition: "With Heavy Cream",
       imgUrl: "assets/images/icedCoffee/iced-coffee1.jpeg",
@@ -42,6 +43,7 @@ List<CoffeeOrder> icedCoffeeOrders = [
           "cocoa powder and drizzled with scrumptious "
           "caramel syrup."),
   CoffeeOrder(
+      id: "",
       name: "Creamed Iced Coffee",
       addition: "Drizzled with Cream",
       imgUrl: "assets/images/icedCoffee/iced-coffee2.jpeg",
@@ -55,6 +57,7 @@ List<CoffeeOrder> icedCoffeeOrders = [
 
 List<CoffeeOrder> coffeeShakeOrders = [
   CoffeeOrder(
+      id: "",
       name: "Parfait",
       addition: "Drizzled with Chocolate",
       imgUrl: "assets/images/coffeeShake/coffee-shake1.jpeg",
@@ -65,6 +68,7 @@ List<CoffeeOrder> coffeeShakeOrders = [
           "cocoa powder and drizzled with scrumptious "
           "caramel syrup."),
   CoffeeOrder(
+      id: "",
       name: "coffee shake",
       addition: "Topped with whipped cream",
       imgUrl: "assets/images/coffeeShake/coffee-shake2.jpeg",
@@ -75,6 +79,7 @@ List<CoffeeOrder> coffeeShakeOrders = [
           "cocoa powder and drizzled with scrumptious "
           "caramel syrup."),
   CoffeeOrder(
+      id: "",
       name: "Frosted Coffee Shake",
       addition: "Topped with frosting",
       imgUrl: "assets/images/coffeeShake/coffee-shake3.jpeg",
@@ -88,6 +93,7 @@ List<CoffeeOrder> coffeeShakeOrders = [
 
 List<CoffeeOrder> chocolateOrders = [
   CoffeeOrder(
+      id: "",
       name: "Whipped Cream Chocolate",
       addition: "Drizzled with Cream",
       imgUrl: "assets/images/chocolate/chocolate1.jpeg",
@@ -98,6 +104,7 @@ List<CoffeeOrder> chocolateOrders = [
           "cocoa powder and drizzled with scrumptious "
           "caramel syrup."),
   CoffeeOrder(
+      id: "",
       name: "Marshmallow Chocolate Drink",
       addition: "Drizzled with Chocolate",
       imgUrl: "assets/images/chocolate/chocolate2.jpeg",
@@ -111,6 +118,7 @@ List<CoffeeOrder> chocolateOrders = [
 
 List<CoffeeOrder> coffeeOrderItems = [
   CoffeeOrder(
+      id: "",
       name: "Cinnamon & Cocoa",
       addition: "Drizzled with Caramel",
       imgUrl: "assets/images/coffee/coffee1.png",
@@ -121,6 +129,7 @@ List<CoffeeOrder> coffeeOrderItems = [
           "cocoa powder and drizzled with scrumptious "
           "caramel syrup."),
   CoffeeOrder(
+      id: "",
       name: "Espresso",
       addition: "Drizzled with Caramel",
       imgUrl: "assets/images/coffee/coffee2.png",
@@ -131,6 +140,7 @@ List<CoffeeOrder> coffeeOrderItems = [
           "cocoa powder and drizzled with scrumptious "
           "caramel syrup."),
   CoffeeOrder(
+      id: "",
       name: "Bursting Blueberry",
       addition: "Drizzled with Caramel",
       imgUrl: "assets/images/coffee/coffee3.png",
@@ -141,6 +151,7 @@ List<CoffeeOrder> coffeeOrderItems = [
           "cocoa powder and drizzled with scrumptious "
           "caramel syrup."),
   CoffeeOrder(
+      id: "",
       name: "Cappuccino",
       addition: "Drizzled with Caramel",
       imgUrl: "assets/images/coffee/coffee4.png",

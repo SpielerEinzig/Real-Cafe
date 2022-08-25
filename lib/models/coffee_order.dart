@@ -1,5 +1,6 @@
 class CoffeeOrder {
   String imgUrl;
+  String id;
   String name;
   double rating;
   String addition;
@@ -9,6 +10,7 @@ class CoffeeOrder {
   CoffeeOrder(
       {required this.description,
       required this.name,
+      required this.id,
       required this.addition,
       required this.imgUrl,
       required this.price,
