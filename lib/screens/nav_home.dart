@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:real_cafe/provider/address_provider.dart';
+import 'package:real_cafe/provider/cart_provider.dart';
+import 'package:real_cafe/provider/favourites_provider.dart';
 import 'package:real_cafe/screens/nav_bar/home.dart';
 import 'package:real_cafe/screens/nav_bar/likes.dart';
 import 'package:real_cafe/screens/nav_bar/location.dart';
@@ -27,10 +31,17 @@ class _NavHomeState extends State<NavHome> {
     const Profile(),
   ];
 
+  listenUserData() {
+    context.read<FavouritesProvider>().fetchAllLikes();
+    context.read<AddressProvider>().fetchAllAddresses();
+    context.read<CartItemProvider>().fetchAllCartItems();
+  }
+
   @override
   void initState() {
     super.initState();
     Navigator.of(context).popUntil((route) => route.isCurrent);
+    listenUserData();
   }
 
   @override

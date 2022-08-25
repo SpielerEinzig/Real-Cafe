@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -5,7 +6,9 @@ import 'package:get_storage/get_storage.dart';
 import 'package:provider/provider.dart';
 import 'package:real_cafe/provider/address_provider.dart';
 import 'package:real_cafe/provider/cart_provider.dart';
+import 'package:real_cafe/screens/nav_home.dart';
 import 'package:real_cafe/screens/splash_screen.dart';
+import 'package:real_cafe/services/auth_service.dart';
 import 'package:real_cafe/utilities/constants.dart';
 
 import 'firebase_options.dart';
@@ -36,6 +39,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    User? user = AuthService().getUserAuthCredential;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       debugShowMaterialGrid: false,
@@ -54,13 +58,11 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
         ),
       ),
-      home: const SplashScreen(),
+      home: user == null ? const SplashScreen() : const NavHome(),
       // home: FutureBuilder(
-      //   future: AuthMethods()
-      //       .getUser(
-      //           uid: FirebaseAuth.instance.currentUser != null
-      //               ? FirebaseAuth.instance.currentUser!.uid
-      //               : null)
+      //   future: () {
+      //     User? user = AuthService().getUserAuthCredential;
+      //   }
       //       .then((value) {
       //     if (value != null) {
       //       context

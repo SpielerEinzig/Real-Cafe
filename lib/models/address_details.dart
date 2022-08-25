@@ -1,18 +1,22 @@
 class AddressModel {
   String name;
+  String userId;
   int phoneNumber;
   String state;
   int zipCode;
   String houseNumber;
   bool isHome;
+  String id;
 
   AddressModel({
     required this.name,
+    required this.userId,
     required this.houseNumber,
     required this.isHome,
     required this.phoneNumber,
     required this.state,
     required this.zipCode,
+    required this.id,
   });
 
   @override

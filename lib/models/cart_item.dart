@@ -2,9 +2,10 @@ import 'package:real_cafe/models/coffee_order.dart';
 
 class CartItems {
   int amount;
+  String id;
   CoffeeOrder order;
 
-  CartItems({required this.amount, required this.order});
+  CartItems({required this.amount, required this.order, required this.id});
 
   @override
   bool operator ==(Object other) =>

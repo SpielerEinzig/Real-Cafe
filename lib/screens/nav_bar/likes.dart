@@ -43,7 +43,7 @@ class _LikesState extends State<Likes> {
                       setState(() {
                         context
                             .read<FavouritesProvider>()
-                            .removeItem(item: item);
+                            .removeItem(item: item, context: context);
                       });
                     }),
               );

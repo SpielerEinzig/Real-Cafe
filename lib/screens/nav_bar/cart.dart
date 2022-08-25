@@ -71,16 +71,14 @@ class _CartState extends State<Cart> {
                 return SlideAbleCartItem(
                   deleteButtonPressed: (context) {
                     setState(() {
-                      context
-                          .read<CartItemProvider>()
-                          .removeItemFromCart(cartItems: item);
+                      context.read<CartItemProvider>().removeItemFromCart(
+                          cartItems: item, context: context);
                     });
                   },
                   plusButtonPressed: () {
                     setState(() {
-                      context
-                          .read<CartItemProvider>()
-                          .increaseItemAmount(cartItems: item);
+                      context.read<CartItemProvider>().increaseItemAmount(
+                          cartItems: item, context: context);
                       _getCartTotal();
                     });
                   },
@@ -88,7 +86,7 @@ class _CartState extends State<Cart> {
                     setState(() {
                       context
                           .read<CartItemProvider>()
-                          .reduceItemAmount(cartItems: item);
+                          .reduceItemAmount(cartItems: item, context: context);
                       _getCartTotal();
                     });
                   },

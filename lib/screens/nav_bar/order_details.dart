@@ -115,12 +115,10 @@ class _OrderDetailsState extends State<OrderDetails> {
                               liked = !liked;
                             });
                             liked
-                                ? context
-                                    .read<FavouritesProvider>()
-                                    .addItem(item: widget.coffeeOrder)
-                                : context
-                                    .read<FavouritesProvider>()
-                                    .removeItem(item: widget.coffeeOrder);
+                                ? context.read<FavouritesProvider>().addItem(
+                                    item: widget.coffeeOrder, context: context)
+                                : context.read<FavouritesProvider>().removeItem(
+                                    item: widget.coffeeOrder, context: context);
                           },
                           icon: liked
                               ? const Icon(
@@ -238,9 +236,8 @@ class _OrderDetailsState extends State<OrderDetails> {
                             screenWidth: screenWidth * 0.7,
                             text: "Buy Now",
                             onTap: () {
-                              context
-                                  .read<CartItemProvider>()
-                                  .addItemToCart(item: widget.coffeeOrder);
+                              context.read<CartItemProvider>().addItemToCart(
+                                  item: widget.coffeeOrder, context: context);
                               showSnackBar(
                                   text: "Added to Cart", context: context);
                             }),
