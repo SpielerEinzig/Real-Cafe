@@ -4,6 +4,7 @@ import 'package:real_cafe/models/address_details.dart';
 import 'package:real_cafe/provider/address_provider.dart';
 import 'package:real_cafe/widgets/add_address_text_field.dart';
 import 'package:real_cafe/widgets/address_type_widget.dart';
+import 'package:real_cafe/widgets/minor_button.dart';
 import 'package:real_cafe/widgets/saved_address_card.dart';
 
 import '../../utilities/constants.dart';
@@ -26,7 +27,6 @@ class _LocationState extends State<Location> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     List<AddressModel> savedAddresses =
         context.read<AddressProvider>().savedAddresses;
     return Scaffold(
@@ -74,28 +74,39 @@ class _LocationState extends State<Location> {
                       ),
                       const SizedBox(height: 12),
                       AddAddressTextField(
-                          controller: _nameController, hintText: "Name"),
+                        controller: _nameController,
+                        hintText: "Name",
+                        numberOnly: false,
+                      ),
                       AddAddressTextField(
-                          controller: _phoneNumberController,
-                          hintText: "Phone Number"),
+                        controller: _phoneNumberController,
+                        hintText: "Phone Number",
+                        numberOnly: true,
+                      ),
                       Row(
                         children: [
                           Expanded(
                             child: AddAddressTextField(
-                                controller: _stateController,
-                                hintText: "State"),
+                              controller: _stateController,
+                              hintText: "State",
+                              numberOnly: false,
+                            ),
                           ),
                           const SizedBox(width: 11),
                           Expanded(
                             child: AddAddressTextField(
-                                controller: _pinCodeController,
-                                hintText: "Pin Code"),
+                              controller: _pinCodeController,
+                              hintText: "Pin Code",
+                              numberOnly: false,
+                            ),
                           ),
                         ],
                       ),
                       AddAddressTextField(
-                          controller: _houseNumberController,
-                          hintText: "House Number"),
+                        controller: _houseNumberController,
+                        hintText: "House Number",
+                        numberOnly: false,
+                      ),
                       const SizedBox(height: 14),
                       const Text(
                         "Type of address",
@@ -132,29 +143,13 @@ class _LocationState extends State<Location> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          GestureDetector(
+                          MinorButton(
                             onTap: () {},
-                            child: Padding(
-                              padding: const EdgeInsets.only(right: 8.0),
-                              child: Container(
-                                width: size.width * 0.26,
-                                height: 34,
-                                decoration: BoxDecoration(
-                                  color: kPrimary,
-                                  borderRadius: BorderRadius.circular(10),
-                                  border: Border.all(
-                                      color: kBackgroundColor, width: 1.5),
-                                ),
-                                child: const Center(
-                                  child: Text(
-                                    "Save",
-                                    style: TextStyle(
-                                        fontSize: 15, color: kCardColor),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
+                            text: "Save",
+                            color: kPrimary,
+                            textColor: kBackgroundColor,
+                            borderColor: kPrimary,
+                          )
                         ],
                       ),
                     ],

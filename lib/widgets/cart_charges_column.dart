@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 Widget cartCharges({
   required double deliveryPrice,
+  required VoidCallback applyCouponTapped,
   required double texesAmount,
   required int grandTotal,
 }) {
@@ -9,7 +10,10 @@ Widget cartCharges({
     children: [
       Image.asset("assets/images/dashes.png"),
       const SizedBox(height: 20),
-      Image.asset("assets/images/apply-coupon.png"),
+      GestureDetector(
+        onTap: applyCouponTapped,
+        child: Image.asset("assets/images/apply-coupon.png"),
+      ),
       const SizedBox(height: 20),
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

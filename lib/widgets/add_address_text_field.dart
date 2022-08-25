@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../utilities/constants.dart';
 
 class AddAddressTextField extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
+  final bool numberOnly;
   const AddAddressTextField({
     Key? key,
+    required this.numberOnly,
     required this.controller,
     required this.hintText,
   }) : super(key: key);
@@ -27,6 +30,14 @@ class AddAddressTextField extends StatelessWidget {
         ),
         child: TextField(
           controller: controller,
+          style: const TextStyle(
+            color: kPrimary,
+          ),
+          inputFormatters: [
+            if (numberOnly) FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
+
+            //NumberFormatter(),
+          ],
           decoration: InputDecoration(
             border: InputBorder.none,
             hintText: hintText,
