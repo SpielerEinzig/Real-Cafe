@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:real_cafe/provider/cart_provider.dart';
+import 'package:real_cafe/screens/nav_bar/coupon_page.dart';
 import 'package:real_cafe/utilities/constants.dart';
+import 'package:real_cafe/utilities/no_animated_page_transition.dart';
 import 'package:real_cafe/widgets/custom_button.dart';
 
 import '../../widgets/cart_charges_column.dart';
@@ -100,6 +102,12 @@ class _CartState extends State<Cart> {
                 child: Column(
                   children: [
                     cartCharges(
+                        applyCouponTapped: () {
+                          noAnimatedTransition(
+                            context: context,
+                            destinationPage: const CouponPage(),
+                          );
+                        },
                         deliveryPrice: deliveryFee,
                         texesAmount: tax,
                         grandTotal: grandTotal),
