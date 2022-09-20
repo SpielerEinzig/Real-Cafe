@@ -19,7 +19,7 @@ class SavedAddressCard extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 8.0),
       child: Container(
         width: double.infinity,
-        height: size.height * 0.11,
+        //height: size.height * 0.11,
         padding: const EdgeInsets.all(17),
         decoration: BoxDecoration(
           border: Border.all(color: isSelected ? kPrimary : Colors.transparent),

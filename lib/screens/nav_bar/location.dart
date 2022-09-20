@@ -168,6 +168,8 @@ class _LocationState extends State<Location> {
                                 showSnackBar(
                                     text: "Error occurred", context: context);
                               }
+
+                              setState(() {});
                             },
                             text: "Save",
                             color: kPrimary,
