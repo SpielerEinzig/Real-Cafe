@@ -10,21 +10,6 @@ User? _user;
 class AuthService {
   final _firebaseAuth = FirebaseAuth.instance;
   final DatabaseUserService _databaseUserService = DatabaseUserService();
-  // User? _loggedInUser;
-  //
-  // getCurrentUser() async {
-  //   try {
-  //     final user = _firebaseAuth.currentUser;
-  //
-  //     if (user != null) {
-  //       _loggedInUser = user;
-  //     }
-  //   } on FirebaseAuthException catch (e) {
-  //     if (kDebugMode) {
-  //       print(e.message);
-  //     }
-  //   }
-  // }
 
   createUserWithEmailAndPassword({
     required String email,
